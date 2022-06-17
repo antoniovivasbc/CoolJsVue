@@ -1,3 +1,6 @@
+import jQuery from "jquery";
+const $ = jQuery;
+window.$ = $;
 var inputTaskName = $('#task-name');
 var inputDeadline = $('#deadline');
 var modalTasks = $('#exampleModal');
@@ -6,6 +9,9 @@ var tBody = $('#task-tbody');
 var tRow = $('#task-tbody tr');
 var taskOnDrag;
 var taskUnder;
+var index;
+var taskName;
+var deadline;
 $("#search-task").on("keyup", function(){
     var value = $(this).val().toLowerCase();
     $("#task-tbody tr").each(function(){
