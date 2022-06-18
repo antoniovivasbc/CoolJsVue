@@ -5,9 +5,7 @@
                 <h4>{{ title }}</h4>
                 <p>{{ description }}</p>
             </div>
-            <button type="button" class="btn btn-primary project-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Check me!
-            </button>
+        <slot/>
         </div>
         <hr>
     </div>
