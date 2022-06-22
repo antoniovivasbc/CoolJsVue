@@ -16,19 +16,21 @@
         </table>
     </BodyComponent>
     <FooterComponent>
-        <button type="button" class="btn btn-primary" id="new-task">New task</button>
+        <PrimaryButtonComponent :btnValue="'New Task'" />
     </FooterComponent>
 </template>
 <script>
     import HeaderComponent from "../modal/HeaderComponent.vue";
     import BodyComponent from "../modal/BodyComponent.vue";
     import FooterComponent from "../modal/FooterComponent.vue";
+    import PrimaryButtonComponent from "../PrimaryButtonComponent.vue";
    export default {
     name: 'DragAndDropComponent',
     components:{
         HeaderComponent,
         BodyComponent,
-        FooterComponent
+        FooterComponent,
+        PrimaryButtonComponent
     }
    }
 </script>
