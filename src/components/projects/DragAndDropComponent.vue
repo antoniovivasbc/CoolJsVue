@@ -16,7 +16,7 @@
         </table>
     </BodyComponent>
     <FooterComponent>
-        <PrimaryButtonComponent :btnValue="'New Task'" />
+        <PrimaryButtonComponent :btnValue="'New Task'"/>
     </FooterComponent>
 </template>
 <script>
