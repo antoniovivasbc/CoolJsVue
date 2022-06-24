@@ -12,6 +12,12 @@
                 </tr>
             </thead>
             <tbody id="task-tbody">
+                <tr v-for="task in tasks" :key="task.id">
+                    <th>{{task.id}}</th>
+                    <td>{{task.name}}</td>
+                    <td>{{task.deadline}}</td>
+                    <td><button class='btn btn-success complete-btn'><img src='img/verifica.png' alt=''></button><button class='btn btn-danger delete-btn'><img src='img/lata-de-lixo.png' alt=''></button><button class='btn btn-info edit-btn' style='color: white;'><img src='img/editar.png' alt=''></button></td>
+                </tr>
             </tbody>
         </table>
     </BodyComponent>
@@ -24,7 +30,7 @@
     import BodyComponent from "../../modal/BodyComponent.vue";
     import FooterComponent from "../../modal/FooterComponent.vue";
     import PrimaryButtonComponent from "../../PrimaryButtonComponent.vue";
-   export default {
+    export default {
     name: 'DragAndDropComponent',
     components:{
         HeaderComponent,
@@ -32,6 +38,23 @@
         FooterComponent,
         PrimaryButtonComponent
     },
-    emits:["change-modal-component", "TaskModalComponent"]
+    data(){
+        return{
+            tasks:null,
+            burguer_id:null
+        }
+    },
+    emits:["change-modal-component", "TaskModalComponent"],
+    methods:{
+        async getTasks(){
+            const request = await fetch ("http://localhost:3000/tasks")
+            const data = await request.json()
+            this.tasks = data
+            console.log(this.tasks)
+        }
+    },
+    mounted(){
+        this.getTasks()
+    }
    }
 </script>
