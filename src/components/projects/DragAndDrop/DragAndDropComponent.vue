@@ -5,7 +5,6 @@
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
                     <th scope="col">Name</th>
                     <th scope="col">Deadline</th>
                     <th scope="col">Action</th>
@@ -13,10 +12,9 @@
             </thead>
             <tbody id="task-tbody">
                 <tr v-for="task in tasks" :key="task.id">
-                    <th>{{task.id}}</th>
                     <td>{{task.name}}</td>
                     <td>{{task.deadline}}</td>
-                    <td><button class='btn btn-success complete-btn'><img src='img/verifica.png' alt=''></button><button class='btn btn-danger delete-btn'><img src='img/lata-de-lixo.png' alt=''></button><button class='btn btn-info edit-btn' style='color: white;'><img src='img/editar.png' alt=''></button></td>
+                    <td><button class='btn btn-danger delete-btn' @click="deleteTask(task.id)"><img src='img/lata-de-lixo.png' alt=''></button></td>
                 </tr>
             </tbody>
         </table>
@@ -41,7 +39,7 @@
     data(){
         return{
             tasks:null,
-            burguer_id:null
+            task_id:null
         }
     },
     emits:["change-modal-component", "TaskModalComponent"],
@@ -50,7 +48,13 @@
             const request = await fetch ("http://localhost:3000/tasks")
             const data = await request.json()
             this.tasks = data
-            console.log(this.tasks)
+        },
+        async deleteTask(id){
+            const request = await fetch('http://localhost:3000/tasks/'+id, {
+                method: "DELETE"
+            })
+            await request.json()
+            this.getTasks()
         }
     },
     mounted(){
