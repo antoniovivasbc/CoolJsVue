@@ -9,7 +9,7 @@
             </ProjectComponent>
         </div>
         <ModalComponent :modalClasses="'modal-dialog modal-lg'">
-            <component v-bind:is="component"/>
+            <component v-bind:is="component" @change-modal-component="ChangeModalComponent"/>
         </ModalComponent>
     </div>
 </template>
@@ -17,7 +17,8 @@
     import ProjectComponent from '@/components/ProjectComponent.vue'
     import PrimaryButtonComponent from '@/components/PrimaryButtonComponent.vue'
     import ModalComponent from '@/components/modal/ModalComponent.vue'
-    import DragAndDropComponent from '@/components/projects/DragAndDropComponent.vue'
+    import DragAndDropComponent from '@/components/projects/DragAndDrop/DragAndDropComponent.vue'
+    import TaskModalComponent from '@/components/projects/DragAndDrop/TaskModalComponent.vue'
     import HangmanGameComponent from '@/components/projects/HangmanGameComponent.vue'
     export default {
         name: "App",
@@ -26,6 +27,7 @@
             PrimaryButtonComponent,
             ModalComponent,
             DragAndDropComponent,
+            TaskModalComponent,
             HangmanGameComponent
         },
         data(){
@@ -36,6 +38,8 @@
         methods:{
             ChangeModalComponent(component){
                 this.component = component
+                console.log(this.component)
+
             }
         }
     }
