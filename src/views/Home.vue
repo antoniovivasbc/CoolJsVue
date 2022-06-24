@@ -38,8 +38,6 @@
         methods:{
             ChangeModalComponent(component){
                 this.component = component
-                console.log(this.component)
-
             }
         }
     }

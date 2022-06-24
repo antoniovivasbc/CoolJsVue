@@ -10,11 +10,12 @@
     import BodyComponent from "../modal/BodyComponent.vue";
     import FooterComponent from "../modal/FooterComponent.vue";
    export default {
-    name: 'DragAndDropComponent',
+    name: 'HangmanGameComponent',
     components:{
         HeaderComponent,
         BodyComponent,
         FooterComponent
-    }
+    },
+        emits:["change-modal-component"]
    }
 </script>

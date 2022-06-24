@@ -31,6 +31,7 @@
         BodyComponent,
         FooterComponent,
         PrimaryButtonComponent
-    }
+    },
+    emits:["change-modal-component", "TaskModalComponent"]
    }
 </script>

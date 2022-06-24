@@ -12,7 +12,7 @@
           </form>
     </BodyComponent>
     <FooterComponent>
-        <PrimaryButtonComponent :btnValue="'Submit'"/>
+        <PrimaryButtonComponent type="submit" form="task-form" :btnValue="'Submit'"/>
     </FooterComponent>
   </div>
 </template>
