@@ -48,8 +48,8 @@
           headers: {"Content-Type": "application/json"},
           body: dataToString
         })
-        var answer = await request.json()
-        console.log(answer)
+        await request.json()
+        this.$emit('change-modal-component', 'DragAndDropComponent')
       }
     }
    }
