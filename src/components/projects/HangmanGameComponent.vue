@@ -1,6 +1,7 @@
 <template>
     <HeaderComponent :titulo="'Hangman Game'"/>
     <BodyComponent>
+        Coming soon!!
     </BodyComponent>
     <FooterComponent>
     </FooterComponent>

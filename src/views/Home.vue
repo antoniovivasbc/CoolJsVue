@@ -42,3 +42,11 @@
         }
     }
 </script>
+<style scoped>
+@media screen and (max-width: 550px) {
+    .project-btn{
+        min-width: 80px;
+        font-size: 10px!important;
+    }
+}
+</style>

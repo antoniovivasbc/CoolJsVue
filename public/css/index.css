@@ -61,10 +61,7 @@ hr{
     .project h4{
         font-size: 14px;
     }
-    .project p, .project-btn{
+    .project p{
         font-size: 10px!important;
-    }
-    .project-btn{
-        min-width: 80px;
     }
 }

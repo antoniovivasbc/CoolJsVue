@@ -68,21 +68,23 @@
                 deadline: event.dataTransfer.getData('draggedTaskDeadline', task.deadline)
             }
             var taskUnder = task
-            var newData = JSON.stringify({name: taskUnder.name, deadline: taskUnder.deadline})
-            var request = await fetch('http://localhost:3000/tasks/'+draggedTask.id,{
-                method: 'PATCH',
-                headers: {"Content-type": "application/json"},
-                body: newData
-            })
-            await request.json()
-            newData = JSON.stringify({name: draggedTask.name, deadline: draggedTask.deadline})
-            request = await fetch('http://localhost:3000/tasks/'+taskUnder.id,{
-                method: 'PATCH',
-                headers: {"Content-type": "application/json"},
-                body: newData
-            })
-            await request.json()
-            this.getTasks()
+            if (draggedTask.id != taskUnder.id){
+                var newData = JSON.stringify({name: taskUnder.name, deadline: taskUnder.deadline})
+                var request = await fetch('http://localhost:3000/tasks/'+draggedTask.id,{
+                    method: 'PATCH',
+                    headers: {"Content-type": "application/json"},
+                    body: newData
+                })
+                await request.json()
+                newData = JSON.stringify({name: draggedTask.name, deadline: draggedTask.deadline})
+                request = await fetch('http://localhost:3000/tasks/'+taskUnder.id,{
+                    method: 'PATCH',
+                    headers: {"Content-type": "application/json"},
+                    body: newData
+                })
+                await request.json()
+                this.getTasks()
+            }
         }
     },
     mounted(){

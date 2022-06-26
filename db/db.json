@@ -2,18 +2,13 @@
   "tasks": [
     {
       "name": "t1",
-      "deadline": "2022-06-09",
-      "id": 2
+      "deadline": "2022-06-03",
+      "id": 1
     },
     {
       "name": "t2",
-      "deadline": "2022-06-03",
-      "id": 3
-    },
-    {
-      "name": "t3",
-      "deadline": "2022-07-01",
-      "id": 4
+      "deadline": "2022-06-25",
+      "id": 2
     }
   ]
 }
