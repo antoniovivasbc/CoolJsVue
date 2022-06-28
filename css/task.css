@@ -1,0 +1,25 @@
+.modal-body{
+    max-height: 70vh;
+    overflow-y: auto;
+}
+.complete-btn, .delete-btn{
+    margin-right: 10px;
+}
+#task-tbody button img{
+    width: 20px;
+}
+@media screen and (max-width: 500px){
+    #task-tbody{
+        font-size: 12px!important;
+    }
+    #task-tbody button img{
+        width: 15px;
+    }
+    #task-tbody button{
+        vertical-align: middle!important;
+        padding: 4px 8px 4px 8px!important;
+    }
+    .complete-btn, .delete-btn{
+        margin-right: 5px;
+    }
+}
