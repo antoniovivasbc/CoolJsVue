@@ -50,6 +50,7 @@
             const tasksData = await request.json()
             this.tasks = tasksData
             this.tasksFiltered = tasksData
+            this.taskFilter()
         },
         async deleteTask(id){
             const request = await fetch('http://localhost:3000/tasks/'+id, {
@@ -90,7 +91,7 @@
         },
         taskFilter(){
             this.tasksFiltered = this.tasks.filter(task => task.name.includes(this.search))
-        }
+        },
     }
    }
 </script>
